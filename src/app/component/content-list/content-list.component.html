@@ -9,7 +9,7 @@
         
         <li *ngFor="let i of data">
             <div>
-                <img src="$../../../assets/slices/{{i['poster-image']}}">
+                <img src="../../../assets/slices/{{i['poster-image']}}" onerror="this.src='../../../assets/slices/placeholder_for_missing_posters.png'">
             </div>
             <p>{{ i.name }}</p>
         </li>

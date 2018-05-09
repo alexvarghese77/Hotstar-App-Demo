@@ -27,4 +27,13 @@ export class ContentListComponent implements OnInit {
     console.log("data",this.data);
   }
 
+  onScroll(){
+    this.pagenum=this.pagenum+1;
+ console.log(this.pagenum);
+   this.contentService.getHeroes(this.pagenum).then(result=>{
+    this.data.push(...result['content-items'].content);
+    this.pageinfo=result;
+  });
+  }
+
 }
