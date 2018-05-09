@@ -8,6 +8,7 @@ header{
                 color: $heading-color;
                 padding: 10px 5px;
                 text-align: center;
+               
 
                 background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.84) 0%, rgba(0, 0, 0, 0.83) 62%, rgba(0, 0, 0, 0.25) 82%, rgba(0, 0, 0, 0.25) 96%, rgba(0, 0, 0, 0.25) 100%);
                 background: -o-linear-gradient(top, rgba(0, 0, 0, 0.84) 0%, rgba(0, 0, 0, 0.83) 62%, rgba(0, 0, 0, 0.25) 82%, rgba(0, 0, 0, 0.25) 96%, rgba(0, 0, 0, 0.25) 100%);
@@ -40,6 +41,9 @@ header{
                         font-size: 28px;
                     }
                     align-items: center;
+                }
+                .search-button{
+                    padding: 8px;
                 }
 
 }

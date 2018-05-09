@@ -1,11 +1,17 @@
 
 <div class="content-list-container">
-    <ul>
-        <li *ngFor="let num of arr">
+    <ul class="search-results"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="20"
+    (scrolled)="onScroll()">
+
+        
+        <li *ngFor="let i of data">
             <div>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0M9bSLUMID7kIRtmTGmhPezgKkImJFijdWMer9eJ0VA_2TiN80Q">
+                <img src="$../../../assets/slices/{{i['poster-image']}}">
             </div>
-            <p>Spider Man home coming</p>
+            <p>{{ i.name }}</p>
         </li>
       </ul>
       
