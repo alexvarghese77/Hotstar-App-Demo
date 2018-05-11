@@ -7,12 +7,14 @@ import { ContentListComponent } from './component/content-list/content-list.comp
 import { HeaderComponent } from './component/header/header.component';
 import { HttpModule } from '@angular/http';
 import  {ContentService} from './service/content.service';
+import { SearchContentComponent } from './component/search-content/search-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContentListComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchContentComponent,
   ],
   imports: [
     BrowserModule,

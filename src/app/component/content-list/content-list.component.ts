@@ -12,6 +12,7 @@ export class ContentListComponent implements OnInit {
     pagenum:number=1;
     data=[];
     pageinfo:any;
+    isSearch: boolean;
 
   constructor( private contentService:ContentService) { 
     this.arr = Array(100).fill(0).map((_, i) => i + 1);
@@ -34,6 +35,14 @@ export class ContentListComponent implements OnInit {
     this.data.push(...result['content-items'].content);
     this.pageinfo=result;
   });
+  }
+  
+  search() {
+    this.isSearch = true;
+  }
+
+  onCancel() {
+    this.isSearch = false;
   }
 
 }

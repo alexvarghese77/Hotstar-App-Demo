@@ -1,3 +1,6 @@
+<div *ngIf="isSearch">
+  <search-content (close)="onCancel($event)"></search-content>
+</div>
 <header>
   <div class="back-button">
     <button class="toolbar-button">
@@ -7,9 +10,9 @@
      
   </div>
   <div class="spacer">
-    <input type="text" class="input">
   </div>
-  <!-- <div class="search-button">
-      <img src="../../../assets/slices/search.png" class="toolbar-button-image">
-  </div> -->
+  <div class="toolbar-button no-default-button">
+      <img src="../../../assets/slices/search.png" class="toolbar-button-image" (click)="search()">
+  </div>
 </header>
+

@@ -1,0 +1,79 @@
+    .no-default-button {
+        border: none;
+        outline: none;
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+    }
+    
+    .top-toolbar {
+        display: flex;
+        padding: 5px;
+        background-color: white;
+    }
+    
+    .rounded-corner {
+        border-radius: 8px;
+    }
+    
+    .search-content-container {
+        z-index: 100;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        opacity: 1;
+        display: flex;
+        flex-direction: column;
+        .search-field {
+            margin: 15px 15px 0 15px;
+            input[type='text'] {
+                display: block;
+                border: none;
+                outline: none;
+                background: #fff;
+                opacity: 1;
+                padding: 10px;
+                flex: 1;
+            }
+            input[type='text']:focus {
+                border: 1px solid lightblue;
+            }
+        }
+        .search-results {
+            flex: 1;
+            display: flex;
+            .results-list {
+                flex: 1;
+                overflow: auto;
+                margin: 15px;
+                border-radius: 8px;
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    li {
+                        display: flex;
+                        background-color: white;
+                        margin: 10px 0 0 0;
+                        border-radius: 8px;
+                        .thumbnail {
+                            flex: 4;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                border-top-left-radius: 8px;
+                                border-bottom-left-radius: 8px;
+                            }
+                        }
+                        .content-detail {
+                            flex: 6;
+                            p {
+                                padding: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
