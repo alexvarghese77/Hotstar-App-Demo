@@ -1,9 +1,13 @@
 <div class="search-content-container">
     <div class="search-field">
         <div class="top-toolbar rounded-corner">
-            <button class="no-default-button fal fa-times" (click)="cancel()">Cancel</button>
-            <input type="text" [value]="searchtxt" (input)="searchtxt = $event.target.value" autofocus>
-            <button class="no-default-button" (click)="seachfn()">Search</button>
+            <div>
+                <img src="../../../assets/slices/close.svg" class="" (click)="cancel()">
+            </div>
+            <input type="text" [value]="searchtxt" (input)="searchtxt = $event.target.value" autofocus>   
+            <div>
+                <img src="../../../assets/slices/searchblack.svg" class="" (click)="seachfn()">
+            </div>
         </div>
     </div>
     <div class="search-results">
