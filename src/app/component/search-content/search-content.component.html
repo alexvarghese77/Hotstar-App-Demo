@@ -2,20 +2,20 @@
     <div class="search-field">
         <div class="top-toolbar rounded-corner">
             <button class="no-default-button fal fa-times" (click)="cancel()">Cancel</button>
-            <input type="text">
-            <button class="no-default-button">Search</button>
+            <input type="text" [value]="searchtxt" (input)="searchtxt = $event.target.value" autofocus>
+            <button class="no-default-button" (click)="seachfn()">Search</button>
         </div>
     </div>
     <div class="search-results">
         <div class="results-list">
             <ul>
-                <li *ngFor="let val of items">
+                <li *ngFor="let i of data">
                     <div class="thumbnail">
-                        <img src="https://secure-media3.hotstar.com/r1/thumbs/PCTV/59/2001753159/PCTV-2001753159-hs.jpg">
+                        <img src="../../../assets/slices/{{i['poster-image']}}" onerror="this.src='../../../assets/slices/placeholder_for_missing_posters.png'">
                     </div>
                     <div class="content-detail">
                         <p>
-                            Hello fsfgdfgn rgkdsjfgkjdff sfgsdfgsdfgsdfgsdfg
+                            {{ i.name }}
                         </p>
                     </div>
                 </li>

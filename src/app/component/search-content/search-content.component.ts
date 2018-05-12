@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import {ContentService} from '../../service/content.service';
 
 @Component({
   selector: 'search-content',
@@ -8,7 +9,9 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class SearchContentComponent implements OnInit {
   @Output() close: EventEmitter<any> = new EventEmitter();
   items: Number[];
-  constructor() {
+  searchtxt:String='';
+  data=[];
+  constructor(private contentService:ContentService) {
     this.items = Array(55).fill(0).map((_, i) => i + 1)
   }
 
@@ -18,4 +21,8 @@ export class SearchContentComponent implements OnInit {
   cancel() {
     this.close.emit(null);
   }
+  seachfn()
+  {
+    this.data=this.contentService.searchcontent(this.searchtxt);
+}
 }

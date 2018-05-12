@@ -10,6 +10,7 @@ export class ContentListComponent implements OnInit {
    arr=[];
 
     pagenum:number=1;
+    maxpagenum:number=1;
     data=[];
     pageinfo:any;
     isSearch: boolean;
@@ -23,7 +24,7 @@ export class ContentListComponent implements OnInit {
       {
         this.data=result['content-items'].content;
         this.pageinfo=result;
-
+        this.maxpagenum=Math.ceil(result['total-content-items']/result['page-size-requested']);
       });
     console.log("data",this.data);
   }
@@ -31,10 +32,13 @@ export class ContentListComponent implements OnInit {
   onScroll(){
     this.pagenum=this.pagenum+1;
     console.log(this.pagenum);
-    this.contentService.getHeroes(this.pagenum).then(result=>{
-    this.data.push(...result['content-items'].content);
-    this.pageinfo=result;
-  });
+    if(this.pagenum<=this.maxpagenum){
+      this.contentService.getHeroes(this.pagenum).then(result=>{
+        this.data.push(...result['content-items'].content);
+        this.pageinfo=result;
+      });
+    }
+    
   }
   
   search() {

@@ -1,4 +1,5 @@
 import * as functions from 'firebase-functions';
+import { config } from './config/config';
 
 // Start writing Firebase Functions
 // https://firebase.google.com/docs/functions/typescript
