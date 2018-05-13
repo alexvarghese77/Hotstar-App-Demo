@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {ContentService} from '../../service/content.service';
 
 @Component({
@@ -7,24 +7,24 @@ import {ContentService} from '../../service/content.service';
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
-   arr=[];
-
+  @Output() heading: EventEmitter<any> = new EventEmitter();
+    arr=[];
     pagenum:number=1;
     maxpagenum:number=1;
     data=[];
     pageinfo:any;
     isSearch: boolean;
-
+   
   constructor( private contentService:ContentService) { 
-    this.arr = Array(100).fill(0).map((_, i) => i + 1);
   }
-
     ngOnInit(){
     this.contentService.getHeroes(this.pagenum).then(result=>
       {
         this.data=result['content-items'].content;
         this.pageinfo=result;
         this.maxpagenum=Math.ceil(result['total-content-items']/result['page-size-requested']);
+
+        this.heading.emit(this.pageinfo.title);
       });
     console.log("data",this.data);
   }
