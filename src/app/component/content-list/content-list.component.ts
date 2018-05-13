@@ -8,7 +8,6 @@ import {ContentService} from '../../service/content.service';
 })
 export class ContentListComponent implements OnInit {
   @Output() heading: EventEmitter<any> = new EventEmitter();
-    arr=[];
     pagenum:number=1;
     maxpagenum:number=1;
     data=[];
@@ -18,22 +17,20 @@ export class ContentListComponent implements OnInit {
   constructor( private contentService:ContentService) { 
   }
     ngOnInit(){
+    //get the first page data
     this.contentService.getContent(this.pagenum).then(result=>
       {
         this.data=result['content-items'].content;
         this.pageinfo=result;
-        this.maxpagenum=Math.ceil(result['total-content-items']/result['page-size-requested']);
-
-        this.heading.emit(this.pageinfo.title);
+        this.maxpagenum=Math.ceil(result['total-content-items']/result['page-size-requested']);  //calculate and set max page number
+        this.heading.emit(this.pageinfo.title);  //set the title in the header component
       });
-    console.log("data",this.data);
   }
 
   onScroll(){
-    this.pagenum=this.pagenum+1;
-    console.log(this.pagenum);
+    this.pagenum=this.pagenum+1;   //increment pagenumbetr by one when scrolling 
     if(this.pagenum<=this.maxpagenum){
-      this.contentService.getContent(this.pagenum).then(result=>{
+      this.contentService.getContent(this.pagenum).then(result=>{         //fetching the  data
         this.data.push(...result['content-items'].content);
         this.pageinfo=result;
       });
@@ -41,6 +38,7 @@ export class ContentListComponent implements OnInit {
     
   }
   
+  //enable and disable search screen
   search() {
     this.isSearch = true;
   }

@@ -10,7 +10,7 @@ export class ContentService {
    }
 //This method will fetch data for the content Lisr
    getContent(i:number): Promise<String[]> {
-    return this.http.get(`../../assets/api/${i}.json`)
+    return this.http.get(`../../assets/api/CONTENTLISTINGPAGE-PAGE${i}.json`)
     .toPromise()
     .then(response =>{
       var result=response.json().page;
@@ -25,7 +25,7 @@ export class ContentService {
     this.data=[];
     let index = 1
     for (index; index <=this.maxpage; index++) {
-      this.http.get(`../../assets/api/${index}.json`)
+      this.http.get(`../../assets/api/CONTENTLISTINGPAGE-PAGE${index}.json`)
       .toPromise()
       .then(response =>{
         //it will chech trough each page and update the object
