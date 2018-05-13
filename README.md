@@ -36,6 +36,7 @@
 
 1. This home page contains a page title and a three column vertically scrolling grid which is not horizontally scrollable
 2. The home page will retrieve the data from JSON file at a time as the user scrolls down the page. The data will be loaded as the user navigates and approaches the end of their current data set. This lazy loading  done in a seamless way without user noticing that additional data is loading (no pausing of scroll)
+
 ![alt text](https://raw.githubusercontent.com/alexvarghese77/Hotstar-App-Demo/master/src/assets/screenshots/listcontent.PNG)
 #### 3.2  Search
  1. The search feature implimented within the Video Listing Page. A search bar will show when user clicks / taps on search icon and will display the search results below the search bar. 
@@ -44,8 +45,8 @@
 
 ![alt text](https://raw.githubusercontent.com/alexvarghese77/Hotstar-App-Demo/master/src/assets/screenshots/searchlist.PNG)
 ## 4 Hosting
-	This application is hosted in Firebase.  Firebase Hosting is production-grade web content hosting for developers. 
-  With Hosting, you can quickly and easily deploy web apps and static content .
+	This application is hosted in Firebase.  Firebase Hosting is production-grade 
+  web content hosting for developers. With Hosting, you can quickly and easily deploy web apps and static content .
 ## 5 Features
 #### 5.1 NGX infinite scroll Package
   The lazy loading feature in this application introduced using this package .This package will trigger an event when user scroll the application and the data is loaded in to the application without user knowing about it .
