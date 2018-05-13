@@ -1,0 +1,124 @@
+[debug] [2018-05-13T11:18:03.587Z] ----------------------------------------------------------------------
+[debug] [2018-05-13T11:18:03.589Z] Command:       D:\My Lernings\node\node-v8.9.1-win-x64\node.exe D:\My Lernings\node\node-v8.9.1-win-x64\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-05-13T11:18:03.589Z] CLI Version:   3.18.4
+[debug] [2018-05-13T11:18:03.589Z] Platform:      win32
+[debug] [2018-05-13T11:18:03.589Z] Node Version:  v8.9.1
+[debug] [2018-05-13T11:18:03.590Z] Time:          Sun May 13 2018 03:18:03 GMT-0800 (Pacific Standard Time)
+[debug] [2018-05-13T11:18:03.590Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-13T11:18:03.720Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-13T11:18:03.721Z] > authorizing via signed-in user
+[debug] [2018-05-13T11:18:03.729Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-05-13T11:18:03.731Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/RQBrIxL535ncV5ueeBwNwdQ8A340O9fbJM2ni5yDSYU',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sun May 13 2018 03:18:03 GMT-0800 (Pacific Standard Time)
+[debug] [2018-05-13T11:18:04.357Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-13T11:18:04.400Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/moviestar-app  
+  
+ Sun May 13 2018 03:18:04 GMT-0800 (Pacific Standard Time)
+[debug] [2018-05-13T11:18:06.399Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-13T11:18:06.400Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/moviestar-app/tokens  
+  
+ Sun May 13 2018 03:18:06 GMT-0800 (Pacific Standard Time)
+[debug] [2018-05-13T11:18:07.886Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'moviestar-app'...
+[info] 
+[info] i  deploying functions, hosting
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] +  functions: Finished running predeploy script.
+[debug] [2018-05-13T11:19:13.089Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^5.12.0",
+    "firebase-functions": "^1.0.2"
+  },
+  "devDependencies": {
+    "tslint": "^5.8.0",
+    "typescript": "^2.5.3"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-05-13T11:19:13.090Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/moviestar-app?view=CONSUMER_VIEW  
+  
+ Sun May 13 2018 03:19:13 GMT-0800 (Pacific Standard Time)
+[debug] [2018-05-13T11:19:13.091Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/moviestar-app?view=CONSUMER_VIEW  
+  
+ Sun May 13 2018 03:19:13 GMT-0800 (Pacific Standard Time)
+[debug] [2018-05-13T11:19:15.654Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-13T11:19:15.879Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2018-05-13T11:19:15.880Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/moviestar-app  
+  
+ Sun May 13 2018 03:19:15 GMT-0800 (Pacific Standard Time)
+[debug] [2018-05-13T11:19:18.276Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-13T11:19:18.277Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/604830704926:getServerAppConfig  
+  
+ Sun May 13 2018 03:19:18 GMT-0800 (Pacific Standard Time)
+[debug] [2018-05-13T11:19:19.528Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-05-13T11:19:19.540Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/moviestar-app/configs  
+  
+ Sun May 13 2018 03:19:19 GMT-0800 (Pacific Standard Time)
+[debug] [2018-05-13T11:19:21.004Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (45.85 KB) for uploading
+[debug] [2018-05-13T11:19:24.008Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/moviestar-app/locations/us-central1/functions:generateUploadUrl  
+  
+ Sun May 13 2018 03:19:24 GMT-0800 (Pacific Standard Time)
+[debug] [2018-05-13T11:19:24.927Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-13T11:19:24.929Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-f562bd47-eea0-44a0-8fe7-d00187f16b03/0a040490-6e07-4eb4-bacd-e9b4627c474b.zip?GoogleAccessId=604830704926@cloudservices.gserviceaccount.com&Expires=1526212163&Signature=hp4eyu8WXf1MAKn8ANzGQK1LboFqWYVsJ%2BjpViY1C31WA7VQxpE4Y%2BTvU2bM5flLeLdaVfG6fJ%2FP4gE1Jvh%2Bqsepfet9nBk65DfEy6m7YHUl%2BvxOMGDvDsH8Rrv9AQODXmqtgSx3id7gP%2FSlD7%2F17gY2oP1EM8J4HtVVgG3Geo5hwjEWC9iIifcp3o68OKgSxinQb8q0xE7qvVOpVm6KyRrB0vGLfez1vv2zdSbDA78zxdOu165gj4nHicDtgRieKc%2F%2F5EgBzWgF%2Fjey14KFjPmjsFM8dBOqb98%2FEshRoVx6tKM0BGt%2F4%2FLznWS%2Bm0cCIXrJnDklIzV2TUDPchU%2BWg%3D%3D  
+ ReadStream {
+  _readableState: 
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { head: [Object], tail: [Object], length: 1 },
+     length: 46948,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     destroyed: false,
+     defaultEncoding: 'utf8',
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path: 'C:\\Users\\Xela\\AppData\\Local\\Temp\\firebase-functions-7332QpE6J357o4jZ.zip',
+  fd: 6,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: undefined,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 46948 } 
+ Sun May 13 2018 03:19:24 GMT-0800 (Pacific Standard Time)

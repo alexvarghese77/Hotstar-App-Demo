@@ -18,7 +18,7 @@ export class ContentListComponent implements OnInit {
   constructor( private contentService:ContentService) { 
   }
     ngOnInit(){
-    this.contentService.getHeroes(this.pagenum).then(result=>
+    this.contentService.getContent(this.pagenum).then(result=>
       {
         this.data=result['content-items'].content;
         this.pageinfo=result;
@@ -33,7 +33,7 @@ export class ContentListComponent implements OnInit {
     this.pagenum=this.pagenum+1;
     console.log(this.pagenum);
     if(this.pagenum<=this.maxpagenum){
-      this.contentService.getHeroes(this.pagenum).then(result=>{
+      this.contentService.getContent(this.pagenum).then(result=>{
         this.data.push(...result['content-items'].content);
         this.pageinfo=result;
       });

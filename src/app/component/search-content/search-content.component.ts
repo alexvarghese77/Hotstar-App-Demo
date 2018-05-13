@@ -11,6 +11,7 @@ export class SearchContentComponent implements OnInit {
   items: Number[];
   searchtxt:String='';
   data=[];
+  searched:boolean=false;
   constructor(private contentService:ContentService) {
     this.items = Array(55).fill(0).map((_, i) => i + 1)
   }
@@ -23,6 +24,10 @@ export class SearchContentComponent implements OnInit {
   }
   seachfn()
   {
-    this.data=this.contentService.searchcontent(this.searchtxt);
-}
+    if(this.searchtxt!==''){
+      this.data=this.contentService.searchcontent(this.searchtxt);
+      this.searched=true;
+    }
+    
+  }
 }
