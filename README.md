@@ -18,11 +18,13 @@
 
 
 ## 1.Introduction
-        This is a simple mobile application demonstrating the UI of popular applications like youtube ,hotstar with some of the basic functionalities . 
+        This is a simple mobile application demonstrating the UI of popular applications
+        like youtube ,hotstar with some of the basic functionalities . 
 
 ## 2.Application Overview
 	
-	The application can be accessed through the URL:https://moviestar-app.firebaseapp.com/ .This is a mobile browser version of youtube / hotstart similer allication developed using Angular 5 and hosted in the google firebase applicatiion
+	The application can be accessed through the URL:https://moviestar-app.firebaseapp.com/ .
+  This is a mobile browser version of youtube / hotstart similer allication developed using Angular 5 and hosted in the google firebase applicatiion
 
 ## 3. Component Description
 	
@@ -42,14 +44,17 @@
 
 ![alt text](https://raw.githubusercontent.com/alexvarghese77/Hotstar-App-Demo/master/src/assets/screenshots/searchlist.PNG)
 ## 4 Hosting
-	This application is hosted in Firebase.  Firebase Hosting is production-grade web content hosting for developers. With Hosting, you can quickly and easily deploy web apps and static content .
+	This application is hosted in Firebase.  Firebase Hosting is production-grade web content hosting for developers. 
+  With Hosting, you can quickly and easily deploy web apps and static content .
 ## 5 Features
 #### 5.1 NGX infinite scroll Package
   The lazy loading feature in this application introduced using this package .This package will trigger an event when user scroll the application and the data is loaded in to the application without user knowing about it .
 
 #### 5.2 Continuous integration 
 	
-	This application integrated with Travis ci and firebase .Travis will watch master branch of the application and any change in the branch it will build and deploy the application to the firebase hosting space.If anything went wrong it will notify via mail.It will helps a lot to automate the integration and deployment.
+	This application integrated with Travis ci and firebase .
+  Travis will watch master branch of the application and any change in the branch it will build and deploy the application to the firebase hosting space.
+  If anything went wrong it will notify via mail.It will helps a lot to automate the integration and deployment.
 
 ## 6 Future enhancement 
 1. Integration with Realtime Database: The application will be integrated with realtime DB so user can able to interact with the application like the currently existing social networking sites
