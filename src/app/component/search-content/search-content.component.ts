@@ -29,6 +29,10 @@ export class SearchContentComponent implements OnInit {
       this.data=this.contentService.searchcontent(searchVal);
       this.searched=true;
     }
+    else{
+      this.data=null;
+      this.searched=true;
+    }
     
   }
 }
