@@ -22,10 +22,11 @@ export class SearchContentComponent implements OnInit {
   cancel() {
     this.close.emit(null);
   }
-  seachfn()   //search the and return data to the view
+  seachfn(searchVal)   //search the and return data to the view
   {
-    if(this.searchtxt!==''){
-      this.data=this.contentService.searchcontent(this.searchtxt);
+    console.log("changed",searchVal)
+    if(searchVal!==""){
+      this.data=this.contentService.searchcontent(searchVal);
       this.searched=true;
     }
     
